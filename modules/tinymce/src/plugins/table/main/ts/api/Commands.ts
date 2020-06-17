@@ -7,7 +7,7 @@
 
 import { HTMLTableRowElement } from '@ephox/dom-globals';
 import { Arr, Fun, Obj, Option, Type } from '@ephox/katamari';
-import { CopyCols, CopyRows, TableFill, TableLookup } from '@ephox/snooker';
+import { CopyCols, CopyRows, TableFill, TableLookup, TableSelection, Selections } from '@ephox/snooker';
 import { Element, Insert, Remove, Replication } from '@ephox/sugar';
 import Editor from 'tinymce/core/api/Editor';
 import { insertTableWithDataValidation } from '../actions/InsertTable';
@@ -16,12 +16,11 @@ import * as Util from '../alien/Util';
 import { Clipboard } from '../core/Clipboard';
 import * as TableTargets from '../queries/TableTargets';
 import { CellSelectionApi } from '../selection/CellSelection';
-import { Selections } from '../selection/Selections';
-import * as TableSelection from '../selection/TableSelection';
 import * as CellDialog from '../ui/CellDialog';
 import * as RowDialog from '../ui/RowDialog';
 import * as TableDialog from '../ui/TableDialog';
 import { DomModifier } from '../ui/DomModifier';
+import * as Ephemera from '../selection/Ephemera';
 
 const registerCommands = (editor: Editor, actions: TableActions, cellSelection: CellSelectionApi, selections: Selections, clipboard: Clipboard) => {
   const isRoot = Util.getIsRoot(editor);
@@ -140,7 +139,7 @@ const registerCommands = (editor: Editor, actions: TableActions, cellSelection: 
       return;
     }
 
-    const cells = TableSelection.getCellsFromSelection(editor);
+    const cells = TableSelection.getCellsFromSelection(editor, Ephemera.selectedSelector);
     if (cells.length === 0) {
       return;
     }

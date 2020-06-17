@@ -21,6 +21,9 @@ import { TableResize } from './TableResize';
 import * as RunOperation from '../model/RunOperation';
 import * as GridRow from '../model/GridRow';
 import * as OtherCells from './OtherCells';
+import * as TableSelection from '../selection/TableSelection';
+import { Selections } from '../selection/Selections';
+import { SelectionTypes } from '../selection/SelectionTypes';
 
 export {
   CellLocation,
@@ -43,6 +46,9 @@ export {
   TablePositions,
   TableRender,
   TableResize,
+  TableSelection,
+  Selections,
+  SelectionTypes,
   RunOperation,
   GridRow,
   OtherCells

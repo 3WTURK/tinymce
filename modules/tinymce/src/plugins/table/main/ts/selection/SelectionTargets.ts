@@ -1,11 +1,9 @@
 import { HTMLTableCaptionElement, HTMLTableCellElement } from '@ephox/dom-globals';
 import { Arr, Cell, Option, Thunk } from '@ephox/katamari';
-import { RunOperation, TableLookup } from '@ephox/snooker';
+import { RunOperation, TableLookup, Selections, TableSelection } from '@ephox/snooker';
 import { Element, Node } from '@ephox/sugar';
 import Editor from 'tinymce/core/api/Editor';
 import * as TableTargets from '../queries/TableTargets';
-import { Selections } from './Selections';
-import * as TableSelection from './TableSelection';
 
 export type SelectionTargets = ReturnType<typeof getSelectionTargets>;
 

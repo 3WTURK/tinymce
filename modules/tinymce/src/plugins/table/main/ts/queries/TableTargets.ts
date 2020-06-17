@@ -7,9 +7,8 @@
 
 import { Element as DomElement, HTMLTableCaptionElement, HTMLTableCellElement, HTMLTableElement, HTMLTableRowElement } from '@ephox/dom-globals';
 import { Fun, Option } from '@ephox/katamari';
-import { RunOperation } from '@ephox/snooker';
+import { RunOperation, Selections } from '@ephox/snooker';
 import { Element } from '@ephox/sugar';
-import { Selections } from '../selection/Selections';
 import * as CellOperations from './CellOperations';
 
 const noMenu = (cell: Element<HTMLTableCellElement | HTMLTableCaptionElement>): RunOperation.CombinedTargets => ({
